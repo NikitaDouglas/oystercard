@@ -17,4 +17,12 @@ describe Oystercard do
        expect { card.top_up(91) }.to raise_error("ERROR: The Oyster Card top-up limit is £90")
      end
    end
+
+   describe "#deduct" do
+
+     it "allows a user to deduct a fare" do
+       card.top_up(10)
+       expect { card.deduct((4.90)) }.to change { card.balance }.by(-4.90)
+     end
+   end
 end

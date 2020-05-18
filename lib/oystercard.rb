@@ -13,6 +13,10 @@ BALANCE_LIMIT = 90
     @balance += number
   end
 
+  def deduct(number)
+    @balance -= number
+  end
+
   private
 
   def check_balance_limit(number)
