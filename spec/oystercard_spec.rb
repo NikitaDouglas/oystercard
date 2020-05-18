@@ -11,4 +11,8 @@ end
     expect { card.top_up(10) }.to change { card.balance }
   end
 
+  it "limits the amount a user can top to £90" do
+    expect { card.top_up(91) }.to raise_error("ERROR: The Oyster Card top-up limit is £90")
+  end
+
 end
