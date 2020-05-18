@@ -20,7 +20,7 @@ describe Oystercard do
 
    describe "#deduct" do
 
-     it "allows a user to deduct a fare" do
+     it "allows a user to have a fare deducted from their card" do
        card.top_up(10)
        expect { card.deduct((4.90)) }.to change { card.balance }.by(-4.90)
      end

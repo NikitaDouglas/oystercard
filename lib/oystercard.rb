@@ -8,18 +8,18 @@ BALANCE_LIMIT = 90
     @balance = 0
   end
 
-  def top_up(number)
-    raise "ERROR: The Oyster Card top-up limit is £#{BALANCE_LIMIT}" if check_balance_limit(number)
-    @balance += number
+  def top_up(amount)
+    raise "ERROR: The Oyster Card top-up limit is £#{BALANCE_LIMIT}" if check_balance_limit(amount)
+    @balance += amount
   end
 
-  def deduct(number)
-    @balance -= number
+  def deduct(amount)
+    @balance -= amount
   end
 
   private
 
-  def check_balance_limit(number)
-    (@balance + number) > BALANCE_LIMIT
+  def check_balance_limit(amount)
+    (@balance + amount) > BALANCE_LIMIT
   end
 end
