@@ -20,6 +20,6 @@ BALANCE_LIMIT = 90
   private
 
   def check_balance_limit(amount)
-    (@balance + amount) > BALANCE_LIMIT
+    @balance += amount > BALANCE_LIMIT
   end
 end
